@@ -12,10 +12,6 @@ var _a = React['createContext']({
     locale: "",
     messages: {},
 }), Provider = _a.Provider, Consumer = _a.Consumer;
-/**
- * Provider
- * Wrapper for the main react component
- */
 exports.LocalizeProvider = function (_a) {
     var messages = _a.messages, locale = _a.locale, children = _a.children, _b = _a.caching, caching = _b === void 0 ? true : _b;
     return (React.createElement(Provider, { value: {
@@ -48,7 +44,7 @@ function getMessage(_a, path) {
 exports.Localize = function (_a) {
     var path = _a.path;
     return React.createElement(Consumer, null, function (props) {
-        return getMessage(props, path) || "localization missing -> '" + props.locale + "' : " + path;
+        return getMessage(props, path) || "localization missing ( path: " + path + ", locale: " + props.locale + " )";
     });
 };
 //# sourceMappingURL=index.js.map

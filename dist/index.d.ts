@@ -1,5 +1,12 @@
 /// <reference types="react" />
 import * as React from 'react';
+/**
+ * Provider
+ * Wrapper for the main react component
+ * <LocalizeProvider locale="en" messages={your_message}>
+ *     <YourApp />
+ * </LocalizeProvider>
+ */
 export interface ProviderProps {
     children?: any;
     caching?: boolean;
@@ -8,14 +15,11 @@ export interface ProviderProps {
         [prop: string]: any;
     };
 }
-/**
- * Provider
- * Wrapper for the main react component
- */
 export declare const LocalizeProvider: React.SFC<ProviderProps>;
 /**
  * Consumer
  * Get the localized string
+ * <Localize path="message.path" />
  */
 export interface LocalizeProps {
     path: string;

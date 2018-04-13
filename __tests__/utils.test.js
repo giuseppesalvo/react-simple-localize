@@ -2,21 +2,24 @@ const { resolvePath } = require('../dist/utils')
 
 describe('Utils', () => {
 
-	test('resolvePath', () => {
+	describe('resolvePath', () => {
 		
 		const obj = {
 			str_check: "hello",
 			arr_check: [
 				0, 1, 2, 3, {
-					obj_arr: "hi!"
+					obj_inside_arr: "hi!"
 				}
+			],
+			array_inside_array: [
+				[ 0, 1, 2, 3, 4, 5, 6 ]
 			],
 			nest_check: {
 				str_check: "nested hello",
 				str_check2: "nested hello 2",
 				arr_check: [
 					"a", "b", "c", {
-						obj_arr: "hi!",
+						obj_inside_arr: "hi!",
 						another_array: [
 							20, 30, "ciao"
 						]
@@ -45,9 +48,11 @@ describe('Utils', () => {
 
 				// Is not the first call
 				if ( path !== "" ) {
-					expect(
-						resolvePath(obj, path)
-					).toEqual(objToTest)
+					it(path, () => {
+						expect(
+							resolvePath(obj, path)
+						).toEqual(objToTest)
+					})
 				}
 
 			} else if ( typeof objToTest === "object" ) {
@@ -59,17 +64,19 @@ describe('Utils', () => {
 
 				// Is not the first call
 				if ( path !== "" ) {
-					expect(
-						resolvePath(obj, path)
-					).toEqual(objToTest)
+					it(path, () => {
+						expect(
+							resolvePath(obj, path)
+						).toEqual(objToTest)
+					})
 				}
 
 			} else {
-
-				expect(
-					resolvePath(obj, path)
-				).toBe(objToTest)
-			
+				it(path, () => {
+					expect(
+						resolvePath(obj, path)
+					).toEqual(objToTest)
+				})
 			}
 		
 		}

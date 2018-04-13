@@ -9,11 +9,20 @@ import {
  * Square brackets because @types/react does not contain the new create context api
  * Context api documentation: https://reactjs.org/docs/context.html
  */
+
 const { Provider, Consumer } = React['createContext']({
     caching : true,
     locale  : "",
     messages: {},
 })
+
+/**
+ * Provider
+ * Wrapper for the main react component
+ * <LocalizeProvider locale="en" messages={your_message}>
+ *     <YourApp />
+ * </LocalizeProvider>
+ */
 
 export interface ProviderProps {
     children? : any,
@@ -21,11 +30,6 @@ export interface ProviderProps {
     locale    : string,
     messages  : { [prop:string]: any },
 }
-
-/**
- * Provider
- * Wrapper for the main react component
- */
 
 export const LocalizeProvider:React.SFC<ProviderProps> = ({ messages, locale, children, caching = true }) => (
     <Provider value={{
@@ -71,15 +75,16 @@ function getMessage({ locale, caching, messages }: ProviderProps, path: string):
 /**
  * Consumer
  * Get the localized string
+ * <Localize path="message.path" />
  */
 
 export interface LocalizeProps {
     path: string
 }
 
-export const Localize: React.SFC<LocalizeProps> = ({ path }: LocalizeProps) => {
+export const Localize: React.SFC<LocalizeProps> = ({ path }) => {
     return <Consumer>{
         (props:ProviderProps) =>
-            getMessage(props, path) || `localization missing -> '${props.locale}' : ${path}`
+            getMessage(props, path) || `localization missing ( path: ${path}, locale: ${props.locale} )`
     }</Consumer>
 }

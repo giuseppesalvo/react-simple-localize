@@ -9,19 +9,31 @@ describe('localize', () => {
 
 	const messages = {
 		en: {
-			hello: "hello"
+			hello: "hello",
+			nested: {
+				test: "test_en"
+			},
 		},
 		it: {
-			hello: "ciao"
+			hello: "ciao",
+			nested: {
+				test: "test_it"
+			},
 		},
 		es: {
-			hello: "hola"
+			hello: "hola",
+			nested: {
+				test: "test_es"
+			},
 		},
 	}
 
 	const Text = () => (
 		<span>
 			<Localize path="hello" />
+			<Localize path="nested.test" />
+			{/* This one is a cache check */}
+			<Localize path="nested.test" />
 		</span>
 	)
 
@@ -41,7 +53,7 @@ describe('localize', () => {
 				</LocalizeProvider>
 			))
 	
-			const shouldBe = `<div><span>${messages[locale].hello}</span></div>`
+			const shouldBe = `<div><span>${messages[locale].hello}${messages[locale].nested.test}${messages[locale].nested.test}</span></div>`
 			expect(wrapper.html()).toBe(shouldBe)
 		})
 
