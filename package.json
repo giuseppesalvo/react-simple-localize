@@ -1,0 +1,36 @@
+{
+  "name": "react-simple-localize",
+  "version": "1.0.0",
+  "description": "simple localization module for react",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "test": "npm run build && npx jest --config=./__tests__/config.json"
+  },
+  "keywords": [
+    "localization",
+    "react",
+    "locale",
+    "i18n",
+    "globalize",
+    "localize"
+  ],
+  "repository": "https://github.com/giuseppesalvo/react-simple-localize.git",
+  "author": "Giuseppe Salvo",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^22.4.3",
+    "react": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.3.10",
+    "babel-jest": "^22.4.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "react-dom": "^16.3.1",
+    "react-test-renderer": "^16.3.1",
+    "typescript": "^2.8.1"
+  }
+}

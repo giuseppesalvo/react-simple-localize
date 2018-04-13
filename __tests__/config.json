@@ -1,0 +1,5 @@
+{
+  "name": "react-simple-localize",
+  "testRegex": "/__tests__/.*\\.test\\.jsx?$",
+  "verbose": true
+}

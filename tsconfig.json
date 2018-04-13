@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "sourceMap": true,
+        "module": "commonjs",
+        "target": "es5",
+        "jsx": "react",
+        "declaration": true,
+        "lib" : ["es2017", "dom"]
+    },
+    "include": [
+        "./src"
+    ],
+    "filesGlob": [
+        "./src/**/*.d.ts"
+    ],
+}
