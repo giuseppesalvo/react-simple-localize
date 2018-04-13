@@ -1,5 +1,7 @@
 # Really minimal localization module based on the new context api
 
+![AppVeyor](https://img.shields.io/appveyor/ci/giuseppesalvo/react-simple-localize.svg)
+
 [React Context Api](https://reactjs.org/docs/context.html)
 
 Zero dependencies, only 3kb ( not minified )
