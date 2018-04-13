@@ -20,7 +20,7 @@ const messages = {
         message: "hello"
     },
     it: {
-        message: "ciao",
+        message: "ciao"
     }
 }
 
