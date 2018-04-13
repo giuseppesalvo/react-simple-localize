@@ -27,6 +27,7 @@ install:
   - ps: Install-Product node $env:nodejs_version
   - set PATH=%APPDATA%\yarn;%PATH%
   - npm install
+  - npm install -g npx
 
 # Disable automatic builds
 build: off
