@@ -22,6 +22,8 @@ export function resolvePath(obj, path) {
         return undefined
     }
 
+    // Transforming array syntax in dot notation
+    // array[3] -> array.$3
     const clean = path.replace(/\[/g, ".$").replace(/\]/g, "")
 
     return clean.split(".").reduce((sum, curr) => {
