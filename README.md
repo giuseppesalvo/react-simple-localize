@@ -11,22 +11,22 @@ Zero dependencies, only 3kb ( not minified )
 // main.jsx
 
 import { LocalizeProvider } from 'react-simple-localize'
-import { YourApp  } from './yourapp'
+import { YourApp } from './yourapp'
 
 const messages = {
-	en: {
-		message: "hello"
-	},
-	it: {
-		message: "ciao",
-	}
+    en: {
+        message: "hello"
+    },
+    it: {
+        message: "ciao",
+    }
 }
 
 render(
-	<LocalizeProvider locale="en" messages={messages}>
-		<YourApp />
-	</LocalizeProvider>,
-	document.body.getElementById('yourapp')
+    <LocalizeProvider locale="en" messages={messages}>
+        <YourApp />
+    </LocalizeProvider>,
+    document.body.getElementById('yourapp')
 )
 ```
 
@@ -37,11 +37,11 @@ render(
 import { Localize } from 'react-simple-localization'
 
 export function App() {
-	return <div>
-		<Localize path="message" />
-		<Localize path="another.nested.message" />
-		<Localize path="nested.message[0].inside_an_array" />
-	</div>
+    return <div>
+        <Localize path="message" />
+        <Localize path="another.nested.message" />
+        <Localize path="nested.message[0].inside_an_array" />
+    </div>
 }
 
 ```
