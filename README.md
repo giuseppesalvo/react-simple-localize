@@ -36,7 +36,7 @@ render(
 
 // yourapp.jsx
 
-import { Localize } from 'react-simple-localization'
+import { Localize } from 'react-simple-localize'
 
 export function App() {
     return <div>
