@@ -28,7 +28,7 @@ render(
     <LocalizeProvider locale="en" messages={messages}>
         <YourApp />
     </LocalizeProvider>,
-    document.body.getElementById('yourapp')
+    document.getElementById('yourapp')
 )
 ```
 
