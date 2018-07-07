@@ -28,7 +28,7 @@ render(
     <LocalizeProvider locale="en" messages={messages}>
         <YourApp />
     </LocalizeProvider>,
-    document.body.getElementById('yourapp')
+    document.getElementById('yourapp')
 )
 ```
 
@@ -36,7 +36,7 @@ render(
 
 // yourapp.jsx
 
-import { Localize } from 'react-simple-localization'
+import { Localize } from 'react-simple-localize'
 
 export function App() {
     return <div>
