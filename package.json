@@ -1,6 +1,6 @@
 {
   "name": "react-simple-localize",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "simple localization module for react",
   "main": "dist/index.js",
   "scripts": {
@@ -19,10 +19,10 @@
   "author": "Giuseppe Salvo",
   "license": "MIT",
   "dependencies": {
-    "jest": "^22.4.3",
     "react": "^16.3.1"
   },
   "devDependencies": {
+    "jest": "^22.4.3",
     "@types/react": "^16.3.10",
     "babel-jest": "^22.4.3",
     "babel-preset-env": "^1.6.1",
